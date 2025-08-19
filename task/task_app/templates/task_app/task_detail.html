@@ -1,0 +1,34 @@
+{% load static%}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/task_detail.css' %}">
+{% endblock %}
+
+{% block container %}
+<form class="border">
+    <h2 class="title">{{task.title}}</h2>
+        <div class="form-info-description">
+            <strong class="description">Опис:</strong><p></p>
+             {{ task.description }}
+        </div>
+        <div class="container">
+            <div class="form-info">
+                <p class="status"><strong>Статус:</strong> {{ task.status }}</p>
+            </div>
+            <div class="form-info">
+                <p class="priorety"><strong>Пріорітет:</strong> {{ task.priority}}</p>
+            </div>
+            <div class="form-info">
+                <p class="creator"><strong>Творець:</strong> {{ task.creator}}</p>
+            </div>
+        </div>
+</form>
+
+<div class="button-container">
+    <a href="{% url 'task_app:task-update' task.pk %}" class="task-button">✏ Редагувати</a>
+    <a href="{% url 'task_app:task-delete' task.pk %}" class="task-button">🗑 Видалити</a>
+    <a href="{% url 'task_app:task-list'%}" class="task-button">Повернутись</a>
+</div>
+
+</body>
+{% endblock %}

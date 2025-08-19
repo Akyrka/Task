@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Task App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+
+<div class="profile">
+    {% if user.is_authenticated and request.path == '/' %}
+        <div class="hello-user"><p>Привіт, {{ user.username }}</p></div>
+        <form method="post" action="{% url 'task_app:logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-danger btn-sm">Вийти</button>
+        </form>
+    {% elif not user.is_authenticated and request.path == '/' %}
+        <a href="{% url 'task_app:login' %}" class="btn btn-outline-primary btn-sm me-2">Увійти</a>
+        <a href="{% url 'task_app:register' %}" class="btn btn-outline-success btn-sm">Реєстрація</a>
+    {% endif %}
+</div>
+
+
+<div class="container mt-4">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

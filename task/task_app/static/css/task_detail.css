@@ -1,0 +1,111 @@
+body{
+    background-color:#1C1C1E;
+}
+
+
+.title {
+    background-color: #1e1e1e; /* темный фон */
+    padding: 30px;              /* внутренние отступы */
+    border-radius: 12px;
+    width: 500px;               /* фиксированная ширина */
+    max-width: 90%;             /* адаптация под экраны поменьше */
+    max-height: 200px;          /* максимальная высота блока */
+    overflow-y: auto;           /* скролл, если текста больше */
+    margin: 0 auto;             /* центрируем по горизонтали */
+
+    font-size: 100%;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+    min-height: 29px;        /* минимальная высота, чтобы блок не был слишком маленьким */
+    max-height: 29px;        /* максимальная высота */
+    overflow-y: auto;         /* скролл при большом тексте */
+    word-wrap: break-word;      /* перенос длинных слов */
+    white-space: pre-wrap;      /* учитывает новые строки и абзацы */
+}
+
+/* .title-center{
+    text-align: center;
+
+} */
+
+.container {
+    display: flex;
+    flex-direction: column; /* блоки идут сверху вниз */
+    align-items: flex-end;  /* прижимаем блоки к правому краю */
+    gap: 13px;              /* отступы между блоками */
+    padding-top: 115px;      /* отступ сверху */
+    padding-right: 510px;    /* отступ справа */
+}
+
+.form-info {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    width: 200px;          
+    font-family: Arial, sans-serif;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+    margin: 0; 
+}
+
+
+
+
+
+.form-info-description {
+    position: absolute;
+    top: 50%;                 
+    left: 30%;                
+    transform: translateY(-50%); 
+
+    background-color: #1e1e1e;
+    padding: 30px;           
+    border-radius: 12px;
+    width: 350px;
+    min-height: 300px;        /* минимальная высота, чтобы блок не был слишком маленьким */
+    max-height: 300px;        /* максимальная высота */
+    overflow-y: auto;         /* скролл при большом тексте */
+    word-wrap: break-word;     
+    white-space: pre-wrap;     
+
+    font-family: Arial, sans-serif;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+
+
+.button-container {
+    text-align: center; /* выравниваем всё содержимое по центру */
+    margin-top: 20px;   /* отступ сверху, если нужно */
+}
+
+
+.task-button {
+    display: inline-block;
+    padding: 10px 20px;          /* внутренние отступы */
+    margin: 10px 5px 0 0;        /* отступы между кнопками */
+    background-color: #1e1e1e;   /* темный фон */
+    color: #fff;                  /* белый текст */
+    border: none;                 /* убираем рамку */
+    border-radius: 6px;           /* скругление углов */
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    cursor: pointer;              /* курсор при наведении */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2); /* лёгкая тень */
+    transition: all 0.3s ease;    /* плавная анимация */
+}
+
+.task-button:hover {
+    background-color: #333;       /* затемнение при наведении */
+    transform: translateY(-2px);  /* лёгкое поднятие */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.task-button:active {
+    transform: translateY(0);     /* кнопка возвращается на место при клике */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,147 @@
+.h2-delete{
+    color:orange
+}
+
+
+/* base */
+
+.profile {
+    display: flex;
+    flex-direction: column; /* ставить елементи один під одним */
+    align-items: flex-end;  /* вирівняти весь блок по правому краю */
+    padding: 10px 20px;
+}
+
+
+/* task-list */
+.task-info {
+    display: flex;
+    flex-wrap: wrap;   /* дозволяє переносити картки вниз */
+    gap: 20px;         /* відстань між ними */
+    justify-content: flex-start; /* вирівнювання по лівому краю */
+    /* */
+}
+.text-bg-custom.mb-3 {
+    
+    background-color: #2C2C2E; 
+    color: #FFFFFF;          
+    border: none;             
+}
+
+.text-custom.text-decoration-none{
+    color:#FFD60A;
+    /* color:#0A84FF */
+    padding: 5px;
+    
+}
+
+.card-header{
+    /* border: 2px solid orange; */
+
+    border-color: black;
+}
+
+body{
+    background-color:#1C1C1E;
+}
+
+.hello-user{
+    color:orange
+}
+
+.btn-custom {
+    border: 2px solid orange;
+    background-color: black ; 
+    color: white;
+    /* border: none; */
+}
+.btn-custom:hover {
+    background-color: orange; /* темніший при наведенні #732d91*/
+}
+
+
+/* task-form */
+
+
+.h2-form{
+    color:white;
+    text-align: center;
+}
+
+/* Общий стиль формы */
+.custom-form {
+
+    background-color: #1e1e1e; /* темный фон */
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Стили для каждого поля (<p>) */
+.custom-form p {
+    margin-bottom: 20px;
+}
+
+/* Лейблы */
+.custom-form p label {
+    /* display: block; */
+    /* margin-bottom: 6px; */
+    font-weight: 600;
+    color: #ddd;
+}
+
+/* Поля ввода */
+.custom-form p input,
+.custom-form p textarea,
+.custom-form p select {
+    /* width: 100%; */
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.custom-form p input:focus,
+.custom-form p textarea:focus,
+.custom-form p select:focus {
+    border-color: orange;
+}
+
+/* Ошибки */
+.custom-form p .errorlist {
+    color: #ff4d4d;
+    margin: 0 0 5px 0;
+    list-style: none;
+    font-size: 13px;
+}
+
+/* Подсказки */
+.custom-form p .helptext {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Кнопка отправки */
+.custom-form button {
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-form button:hover {
+    background-color: orange;
+}
+
+

@@ -1,0 +1,44 @@
+{% extends "task_app/base.html" %}
+{% load static %}
+
+
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/task_list.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+<!-- <div class="task-container"> -->
+  <div class="task-info">
+      {% for task in tasks %}
+          <div class="card text-bg-custom mb-3" style="width: 18rem;border: 2px solid rgb(34, 34, 34);">
+            <div class="card-header">
+              <h5 class="card-title">
+                <a href="{% url 'task_app:task-detail' task.pk %}" class="text-custom text-decoration-none">
+                  {{ task.title }}
+                </a>
+              </h5>
+            </div>
+            <div class="card-body">
+              Статус: {{ task.status }}<br>
+              Пріоритет: {{ task.priority }}
+              <!-- <p class="card-text">Опис: {{ task.description|default:"(без опису)" }}</p> -->
+            </div>
+          </div>
+      {% empty %}
+          <p>Завдань не знайдено</p>
+      {% endfor %}
+  </div>
+<!-- </div> -->
+
+
+    <a class="btn btn-custom" href="{% url 'task_app:task-create' %}" role="button">Додати Завдання</a>
+
+</body>
+
+{% endblock %}
+
+

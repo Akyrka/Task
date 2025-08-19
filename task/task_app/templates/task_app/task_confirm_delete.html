@@ -1,0 +1,11 @@
+{% extends "task_app/base.html" %}
+
+{% block content %}
+<h2 class="h2-delete">Видалити завдання: "{{ object.title }}"?</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Так, видалити</button>
+    <a href="{% url 'task_app:task-list' %}" class="btn btn-secondary">Скасувати</a>
+</form>
+{% endblock %}
