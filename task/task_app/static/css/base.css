@@ -1,5 +1,8 @@
 .h2-delete{
-    color:orange
+    color:orange;
+}
+h5{
+    color:orange;
 }
 
 
@@ -19,6 +22,7 @@
     flex-wrap: wrap;   /* дозволяє переносити картки вниз */
     gap: 20px;         /* відстань між ними */
     justify-content: flex-start; /* вирівнювання по лівому краю */
+    padding-bottom: 20px;
     /* */
 }
 .text-bg-custom.mb-3 {
@@ -51,12 +55,25 @@ body{
 
 .btn-custom {
     border: 2px solid orange;
-    background-color: black ; 
+    background-color: black; 
     color: white;
-    /* border: none; */
+    margin-bottom: 100px; /* отступ снизу снаружи */
+    padding: 10px 20px;  /* нормальные внутренние отступы: сверху/снизу и слева/справа */
 }
+
 .btn-custom:hover {
     background-color: orange; /* темніший при наведенні #732d91*/
+    transform: translateY(-2px);  /* лёгкое поднятие */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-button:active {
+    transform: translateY(0);     /* кнопка возвращается на место при клике */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.button-complete{
+    background-color: #FFD60A;
 }
 
 

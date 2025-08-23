@@ -11,6 +11,15 @@
 {% block content %}
 
 <body>
+
+
+    <form method="get" class="form-inline mb-3">
+      <h5>{{form.status.label_tag}}
+      {{form.status}}
+      <button type="submit" class ="btn btn-warning ml-2">Фільтрувати</button></h5>
+    </form>
+
+
 <!-- <div class="task-container"> -->
   <div class="task-info">
       {% for task in tasks %}
@@ -24,12 +33,18 @@
             </div>
             <div class="card-body">
               Статус: {{ task.status }}<br>
-              Пріоритет: {{ task.priority }}
+              Пріоритет: {{ task.priority }}<br>
+              Час виконання: {{ task.end_time}}
+              Творець: {{task.creator}}
               <!-- <p class="card-text">Опис: {{ task.description|default:"(без опису)" }}</p> -->
             </div>
+            <form action="{% url 'task_app:task-complete' task.pk%}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-secondary btn-sm" >Помітити як виконано</button>
+            </form>
           </div>
       {% empty %}
-          <p>Завдань не знайдено</p>
+          <h5><p>Завдань не знайдено</p></h5>
       {% endfor %}
   </div>
 <!-- </div> -->

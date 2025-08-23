@@ -23,3 +23,12 @@ class RegisterForm(UserCreationForm):
             "password1": "",
             "password2": "",
         }
+
+class TaskFilterForm(forms.Form):
+    STATUS_CHOICES = [
+        ("todo", "To Do"),
+        ("in_progress", "In Progress"),
+        ("done", "Done"),
+    ]
+
+    status = forms.ChoiceField(choices=STATUS_CHOICES,required=False,label="Статус" )

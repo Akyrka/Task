@@ -6,7 +6,7 @@
 
 {% block container %}
 <form class="border">
-    <h2 class="title">{{task.title}}</h2>
+    <h2 class="title">Назва: {{task.title}}</h2>
         <div class="form-info-description">
             <strong class="description">Опис:</strong><p></p>
              {{ task.description }}
@@ -25,9 +25,9 @@
 </form>
 
 <div class="button-container">
-    <a href="{% url 'task_app:task-update' task.pk %}" class="task-button">✏ Редагувати</a>
-    <a href="{% url 'task_app:task-delete' task.pk %}" class="task-button">🗑 Видалити</a>
-    <a href="{% url 'task_app:task-list'%}" class="task-button">Повернутись</a>
+    <a href="{% url 'task_app:task-update' task.pk %}" class="task-button" style="background-color: rgb(255, 183, 0); color:black">✏ Редагувати</a>
+    <a href="{% url 'task_app:task-delete' task.pk %}" class="task-button" style="background-color: rgba(255, 0, 0, 0.866); color:black">🗑 Видалити</a>
+    <a href="{% url 'task_app:task-list'%}" class="task-button" style="background-color: gray; color:black">Повернутись</a>
 </div>
 
 </body>
