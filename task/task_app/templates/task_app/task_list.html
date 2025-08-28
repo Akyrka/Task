@@ -40,7 +40,9 @@
             </div>
             <form action="{% url 'task_app:task-complete' task.pk%}" method="post">
               {% csrf_token %}
+              {% if task.creator == user%}
               <button type="submit" class="btn btn-secondary btn-sm" >Помітити як виконано</button>
+              {%endif%}
             </form>
           </div>
       {% empty %}

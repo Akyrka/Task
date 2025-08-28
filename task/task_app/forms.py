@@ -1,5 +1,5 @@
 from django import forms
-from task_app.models import Task
+from task_app.models import Task, Comment
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -32,3 +32,8 @@ class TaskFilterForm(forms.Form):
     ]
 
     status = forms.ChoiceField(choices=STATUS_CHOICES,required=False,label="Статус" )
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ["context"]

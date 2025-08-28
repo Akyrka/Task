@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-
+<div class="home-title">
+    {% if request.path == '/'%}
+    <h2>Головна</h2>   
+    {% endif %}
+</div> 
 <div class="profile">
     {% if user.is_authenticated and request.path == '/' %}
         <div class="hello-user"><p>Привіт, {{ user.username }}</p></div>

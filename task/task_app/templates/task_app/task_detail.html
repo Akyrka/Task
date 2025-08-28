@@ -2,6 +2,7 @@
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/task_detail.css' %}">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" /> -->
 {% endblock %}
 
 {% block container %}
@@ -29,6 +30,29 @@
     <a href="{% url 'task_app:task-delete' task.pk %}" class="task-button" style="background-color: rgba(255, 0, 0, 0.866); color:black">🗑 Видалити</a>
     <a href="{% url 'task_app:task-list'%}" class="task-button" style="background-color: gray; color:black">Повернутись</a>
 </div>
+
+  <hr>
+  <h3 style="color: rgb(255, 255, 255);text-align: center;">Комментарии</h3>
+  {% for comment in comments %}
+<p>
+  <strong style="color:orange">{{ comment.author }}</strong>:
+  <span style="color: white;">{{ comment.context }}</span>
+  {% if comment.author == user %}
+    <strong><a href="{% url 'task_app:comment-delete' comment.pk %}" style="background-color: gray; padding: 7px 15px;border: none; border-radius: 6px; color: black;">удалить</a></strong>
+  {% endif %}
+</p>
+
+  {% empty %}
+    <strong style="color: white;"><p>Комментариев пока нет</p></strong>
+  {% endfor %}
+
+  <hr>
+  <h4 style="color:white">Добавить комментарий</h4>
+  <form method="post">
+    {% csrf_token %}
+    <span style="color: white;">{{ form.as_p }}</span>
+    <button type="submit" class="task-button" style="color:aliceblue">Отправить</button>
+  </form>
 
 </body>
 {% endblock %}

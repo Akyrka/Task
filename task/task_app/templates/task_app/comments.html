@@ -1,0 +1,18 @@
+{% extends "task_app/base.html" %}
+
+{% block title %}Комментарии{% endblock %}
+
+{% block content %}
+  <h2>Список комментариев</h2>
+  {% for comment in comments %}
+    <p>{{ comment.author }}: {{ comment.text }}</p>
+  {% empty %}
+    <p>Комментариев пока нет</p>
+    <a href="#" type="button">Додати коментарій</a>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+  {% endfor %}
+{% endblock %}

@@ -58,7 +58,7 @@ body{
 .form-info-description {
     position: absolute;
     top: 50%;                 
-    left: 30%;                
+    left: 29%;                
     transform: translateY(-50%); 
 
     background-color: #1e1e1e;
