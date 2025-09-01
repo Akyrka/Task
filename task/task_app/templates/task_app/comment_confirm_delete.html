@@ -1,14 +1,14 @@
 {% extends "task_app/base.html" %}
 
-{% block title %}Удалить комментарий{% endblock %}
+{% block title %}Видалити коментар{% endblock %}
 
 {% block content %}
-  <h2 style="color: white;">Вы уверены, что хотите удалить комментарий?</h2>
+  <h2 style="color: white;">Ви впевнені, що хочете видалити коментар?</h2>
   <p><strong>{{ comment.text }}</strong></p>
 
   <form method="post">
     {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Удалить</button>
-    <a href="{% url 'task_app:task-detail' comment.task.pk %}" class="btn btn-secondary">Отмена</a>
+    <button type="submit" class="btn btn-danger">Видалити</button>
+    <a href="{% url 'task_app:task-detail' comment.task.pk %}" class="btn btn-secondary">Скасувати</a>
   </form>
 {% endblock %}

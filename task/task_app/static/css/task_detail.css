@@ -109,3 +109,46 @@ body{
     transform: translateY(0);     /* кнопка возвращается на место при клике */
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
+
+
+
+/* коментари */
+.comments-indentation1 {
+  margin-left: none;   /* сдвигает блок вправо 10%*/
+  text-align: none;   /* текст внутри будет выровнен по левому краю  left */
+}
+
+.comments-indentation {
+  margin-left: 20%;   /* сдвигаем вправо */
+  text-align: left;
+}
+.comments-indentation p {
+    display: flex;
+    flex-wrap: wrap; /* чтобы текст переносился */
+    align-items: flex-start; /* автор сверху */
+    gap: 0.5em; /* расстояние между автором и текстом */
+    margin-bottom: 0.5em;
+}
+
+.comments-indentation p strong {
+    flex: 0 0 auto; 
+}
+
+.comments-indentation p span {
+    /* flex: 100%;  */
+    max-width: 100ch;
+    white-space: normal;
+    word-break: break-word;
+    color: white;
+}
+
+
+
+
+
+
+textarea {
+    width: 250px;   /* ширина */
+    height: 50px;   /* высота */
+    resize: none;   /* запретить растягивание */
+}
